@@ -6,6 +6,9 @@ class Car_model(models.Model):
     colour = models.CharField(max_length=10)
     car_image = models.CharField(max_length=1000)
 
+    def __str__(self):
+        return self.model_name + ' - ' + self.engine
+
 class Variation (models.Model):
     car_model = models.ForeignKey(Car_model, on_delete=models.CASCADE)
     file_type = models.CharField(max_length=10)
