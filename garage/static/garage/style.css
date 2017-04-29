@@ -30,3 +30,6 @@ nav div div a {
 a {
     color: pink !important;
 }
+.navbar {
+    border-radius: 0;
+}
