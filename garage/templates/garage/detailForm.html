@@ -1,0 +1,29 @@
+<!--{{ cars }}-->
+<img src="{{ cars.car_image }}">
+
+<h1>{{ cars.model_name }}</h1>
+<h2>{{ cars.colour }}</h2>
+
+<ul>
+    {% for vehicles in cars.variation_set.all %}
+        <li>{{ vehicles.car_model }} - {{ vehicles.variation_type }}</li>
+    {% endfor %}
+</ul>
+
+{% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+<form action="{% url 'garage:favorite' cars.id %}" method="post">
+    {% csrf_token %}
+    {% for vehicles in cars.variation_set.all %}
+        <input type="radio" id="vehicles{{ forloop.counter }}" value="{{ variation.id }}"/>
+        <label for="vehicles{{ forloop.counter }}">
+            {{ vehicles.car_model }}
+            {% if vehicles.is_favorite %}
+                <img src="http://i.imgur.com/b9b13Rd.png" />>
+            {% endif %}
+        </label><br>
+    {% endfor %}
+    <input type="submit" value="Fave">
+</form>
