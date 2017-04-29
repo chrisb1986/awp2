@@ -7,6 +7,9 @@ urlpatterns = [
     # /garage/ = garage index page.
     url(r'^$', views.index, name='index'),
 
-    # /garage/xx/ = garage id after /garage/ page.
+    # /garage/<car_id>/ = car id after /garage/ page.
     url(r'^(?P<car_id>[0-9]+)/$', views.detail, name='detail'),
+
+    # /garage/<car_id>/favorite/
+    url(r'^(?P<car_id>[0-9]+)/favorites/$', views.favorite, name='favorite'),
 ]
