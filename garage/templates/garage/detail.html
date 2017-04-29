@@ -1,3 +1,8 @@
+<!-- Loads the path to your static files -->
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'garage/style.css' %}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
 <!--{{ cars }}-->
 <img src="{{ cars.car_image }}">
 
