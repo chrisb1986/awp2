@@ -2,7 +2,7 @@
 # from django.http import HttpResponse
 # from django.template import loader
 from django.shortcuts import render, get_object_or_404
-from .models import Car_model
+from .models import Car_model, Variation
 
 def index(request):
     all_cars  = Car_model.objects.all()
@@ -24,3 +24,17 @@ def detail(request, car_id):
     #     raise Http404("Car does not exist")
     cars = get_object_or_404(Car_model, pk=car_id)
     return render(request, 'garage/detail.html', {'cars': cars})
+
+# def favorite(request, car_id):
+#     cars = get_object_or_404(Car_model, pk=car_id)
+#     try:
+#         selected_car = cars.variation_set.get(pk=request.POST['Variation'])
+#     except (KeyError, Variation.DoesNotExist):
+#         return render(request, 'garage/detail.html', {
+#             'cars': cars,
+#             'error_message': "You did not select a valid car.",
+#         })
+#     else:
+#         selected_car.is_favorite = True
+#         selected_car.save()
+#         return render(request, 'garage/detail.html', {'cars': cars})
