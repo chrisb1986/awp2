@@ -1,39 +1,14 @@
-<!-- Loads the path to your static files -->
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'garage/style.css' %}" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+{% extends 'garage/base.html' %}
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-
-        <!-- Header. -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{% url 'garage:index' %}">iGarage</a>
-        </div>
-
-        <!-- Navbar items. -->
-        <div class="collapse navbar-collapse" id="topNavBar">
-            <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="{% url 'garage:index' %}">My Garage</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-{% if all_cars %}
-    <h2>Garage</h2>
-    <ul>
-        {% for cars in all_cars %}
-            <li><a href="{% url 'garage:detail' cars.id %}">{{ cars.model_name }}</a></li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <h3>There are no cars available</h3>
-{% endif %}
+{% block body %}
+    {% if all_cars %}
+        <h2>Garage</h2>
+        <ul>
+            {% for cars in all_cars %}
+                <li><a href="{% url 'garage:detail' cars.id %}">{{ cars.model_name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h3>There are no cars available</h3>
+    {% endif %}
+{% endblock %}
