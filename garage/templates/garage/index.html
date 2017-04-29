@@ -1,4 +1,5 @@
 {% if all_cars %}
+    <h2>Garage</h2>
     <ul>
         {% for cars in all_cars %}
         <li><a href="/garage/{{ cars.id }}/">{{ cars.model_name }}</a></li>
