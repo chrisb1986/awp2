@@ -13,3 +13,6 @@ class Variation (models.Model):
     car_model = models.ForeignKey(Car_model, on_delete=models.CASCADE)
     file_type = models.CharField(max_length=10)
     variation_type = models.CharField(max_length=15)
+
+    def __str__(self):
+        return self.variation_type
