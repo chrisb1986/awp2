@@ -1,7 +1,32 @@
+/* Fonts. */
+/* Milkshake. */
+@font-face {
+    font-family: milkshake;
+    src: url("fonts/milkshake/milkshake.eot") format('embedded-opentype') /* EOT file for IE */
+}
+@font-face {
+    font-family: milkshake;
+    src: url("fonts/milkshake/milkshake.ttf") format('truetype') /* TTF file for CSS3 browsers */
+}
+@font-face {
+    font-family: milkshake;
+    src: url("fonts/milkshake/milkshake.otf") /* OTF file for everything? */
+}
+@font-face {
+    font-family: milkshake;
+    src: url("/fonts/milkshake/milkshake.woff") /* WOFF file for everything? */
+}
+
+
 body {
     background: black url("images/bg.jpg");
-    color: white;
+    color: white!important;
+}
+nav div div a {
+    font-family: milkshake;
+    color: #9d9d9d !important;
+    font-size: xx-large !important;
 }
 a {
-    color: pink;
+    color: pink !important;
 }
