@@ -5,7 +5,8 @@ class Car_model(models.Model):
     engine = models.CharField(max_length=4)
     model_name = models.CharField(max_length=15)
     colour = models.CharField(max_length=10)
-    car_image = models.CharField(max_length=1000)
+    # car_image = models.CharField(max_length=1000)
+    car_image = models.FileField()
 
     def get_absolute_url(self):
         return reverse('garage:detail', kwargs={'pk': self.pk})
