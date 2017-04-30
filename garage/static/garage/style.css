@@ -32,6 +32,6 @@ a {
 .navbar {
     border-radius: 0;
 }
-#id_engine, #id_model_name, #id_colour, #id_car_image {
+form button, #id_engine, #id_model_name, #id_colour, #id_car_image {
     color: #000000;
 }
