@@ -5,8 +5,8 @@
     <!--{{ cars }}-->
     <img src="{{ car_model.car_image.url }}">
 
-    <h1>{{ car_model.model_name }}</h1>
-    <h2>{{ car_model.colour }}</h2>
+    <h1>Car model: {{ car_model.model_name }}</h1>
+    <h2>Car colour: {{ car_model.colour }}</h2>
 
     <ul>
         {% for vehicles in car_model.variation_set.all %}
