@@ -1,16 +1,16 @@
-<!-- Loads the path to your static files -->
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'garage/style.css' %}" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+{% extends 'garage/base.html' %}
+<title>{% block title %}Car Details{% endblock %}</title>
 
-<!--{{ cars }}-->
-<img src="{{ cars.car_image }}">
+{% block body %}
+    {{ cars }}
+    <img src="{{ car_model.car_image }}">
 
-<h1>{{ cars.model_name }}</h1>
-<h2>{{ cars.colour }}</h2>
+    <h1>{{ car_model.model_name }}</h1>
+    <h2>{{ car_model.colour }}</h2>
 
-<ul>
-    {% for vehicles in cars.variation_set.all %}
-        <li>{{ vehicles.car_model }} - {{ vehicles.variation_type }}</li>
-    {% endfor %}
-</ul>
+    <ul>
+        {% for vehicles in car_model.variation_set.all %}
+            <li>{{ vehicles.car_model }} - {{ vehicles.variation_type }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

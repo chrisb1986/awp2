@@ -5,11 +5,8 @@ app_name = 'garage'
 
 urlpatterns = [
     # /garage/ = garage index page.
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.IndexView.as_view(), name='index'),
 
     # /garage/<car_id>/ = car id after /garage/ page.
-    url(r'^(?P<car_id>[0-9]+)/$', views.detail, name='detail'),
-
-    # /garage/<car_id>/favorite/
-    # url(r'^(?P<car_id>[0-9]+)/favorite/$', views.favorite, name='favorite'),
+    url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
 ]
