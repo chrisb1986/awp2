@@ -3,7 +3,7 @@
 
 {% block body %}
     <!--{{ cars }}-->
-    <img src="{{ car_model.car_image }}">
+    <img src="{{ car_model.car_image.url }}">
 
     <h1>{{ car_model.model_name }}</h1>
     <h2>{{ car_model.colour }}</h2>

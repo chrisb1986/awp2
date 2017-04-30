@@ -2,7 +2,7 @@
 
 {% block body %}
     {% if all_cars %}
-        <h2>Garage</h2>
+        <h3>List of your current cars are below</h3>
         <ul>
             {% for cars in all_cars %}
                 <li><a href="{% url 'garage:detail' cars.id %}">{{ cars.model_name }}</a></li>
