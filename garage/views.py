@@ -1,5 +1,6 @@
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.core.urlresolvers import reverse_lazy
 from .models import Car_model
 
 class IndexView(generic.ListView):
@@ -16,3 +17,12 @@ class DetailView(generic.DetailView):
 class CarCreate(CreateView):
     model = Car_model
     fields = ['engine', 'model_name', 'colour', 'car_image']
+
+class CarUpdate(UpdateView):
+    model = Car_model
+    fields = ['engine', 'model_name', 'colour', 'car_image']
+
+
+class CarDelete(DeleteView):
+    model = Car_model
+    success_url = reverse_lazy('garage:index')

@@ -6,6 +6,20 @@
         <ul>
             {% for cars in all_cars %}
                 <li><a href="{% url 'garage:detail' cars.id %}">{{ cars.model_name }}</a></li>
+
+                <!-- Delete. -->
+                <form action="{% url 'garage:car-delete' cars.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="car_id" value="{{ cars.id }}"/>
+                    <button type="submit">Delete Car</button>
+                </form>
+
+                <!-- Update. -->
+                <form action="{% url 'garage:car-update' cars.id %}" method="">
+                    {% csrf_token %}
+                    <input type="hidden" name="car_id" value="{{ cars.id }}"/>
+                    <button type="submit">Update Car</button>
+                </form>
             {% endfor %}
         </ul>
     {% else %}
