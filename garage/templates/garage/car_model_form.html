@@ -1,0 +1,10 @@
+{% extends 'garage/base.html' %}
+<title>{% block title %}New Car Details{% endblock %}</title>
+
+{% block body %}
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% include 'garage/form-template.html' %}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

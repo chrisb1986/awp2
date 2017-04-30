@@ -25,8 +25,13 @@
         <!-- Navbar items. -->
         <div class="collapse navbar-collapse" id="topNavBar">
             <ul class="nav navbar-nav">
+                <!-- View all cars. -->
                 <li class="active">
                     <a href="{% url 'garage:index' %}">My Garage</a>
+                </li>
+                <!-- Add cars. -->
+                <li class="">
+                    <a href="{% url 'garage:car-add' %}">Add Cars</a>
                 </li>
             </ul>
         </div>
