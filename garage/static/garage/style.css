@@ -14,9 +14,8 @@
 }
 @font-face {
     font-family: milkshake;
-    src: url("/fonts/milkshake/milkshake.woff") /* WOFF file for everything? */
+    src: url("fonts/milkshake/milkshake.woff") /* WOFF file for everything? */
 }
-
 
 body {
     background: black url("images/bg.jpg");
@@ -32,4 +31,7 @@ a {
 }
 .navbar {
     border-radius: 0;
+}
+#id_engine, #id_model_name, #id_colour, #id_car_image {
+    color: #000000;
 }
