@@ -12,5 +12,5 @@
         {% for vehicles in car_model.variation_set.all %}
             <li>{{ vehicles.car_model }} - {{ vehicles.variation_type }}</li>
         {% endfor %}
-    </ul></hr>
+    </ul>
 {% endblock %}
