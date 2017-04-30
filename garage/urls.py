@@ -9,4 +9,6 @@ urlpatterns = [
 
     # /garage/<car_id>/ = car id after /garage/ page.
     url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
+    # /garage/car/add/ = add new car page.
+    url(r'car/add/$', views.CarCreate.as_view(), name='car-add'),
 ]

@@ -1,4 +1,5 @@
 from django.views import generic
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Car_model
 
 class IndexView(generic.ListView):
@@ -11,3 +12,7 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Car_model
     template_name = 'garage/detail.html'
+
+class CarCreate(CreateView):
+    model = Car_model
+    fields = ['engine', 'model_name', 'colour', 'car_image']
